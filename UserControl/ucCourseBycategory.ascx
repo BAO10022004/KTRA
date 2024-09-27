@@ -148,8 +148,7 @@
             Name:
             <asp:Label ID="NameLabel" runat="server" Text='<%# Eval("Name") %>' />
             <br />
-            ImageFilePath:
-            <asp:Label ID="ImageFilePathLabel" runat="server" Text='<%# Eval("ImageFilePath") %>' />
+            <asp:Image ID="Image1" runat="server" ImageUrl='<%#"../images/Courses/"+ Eval("ImageFilePath") %>'/>
             <br />
             Description:
             <asp:Label ID="DescriptionLabel" runat="server" Text='<%# Eval("Description") %>' />
@@ -171,7 +170,7 @@
     
     
 </asp:ListView>
-<asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=QLKhoaHocEntities" DefaultContainerName="QLKhoaHocEntities" EnableFlattening="False" EntitySetName="Courses" EntityTypeFilter="Course" Where="it.Category.id= @ID">
+<asp:EntityDataSource ID="EntityDataSource1" runat="server" ConnectionString="name=QLKhoaHocEntities" DefaultContainerName="QLKhoaHocEntities" EnableFlattening="False" EntitySetName="Courses" EntityTypeFilter="Course" Where="it.Category.CatID = @ID">
     <WhereParameters>
         <asp:QueryStringParameter Name="ID" QueryStringField="id" Type="Int32" />
     </WhereParameters>

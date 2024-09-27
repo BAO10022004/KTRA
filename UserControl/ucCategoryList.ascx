@@ -3,12 +3,14 @@
 
 <asp:DataList ID="DataList1" runat="server" DataSourceID="EntityDataSource1">
     <ItemTemplate>
-        <asp:Label ID="CatNameLabel" runat="server" Text='<%# Eval("CatName") +"(" + Eval("Courses.Count") +")"  %>' />
+        <asp:HyperLink ID="HyperLink1" runat="server" Text='<%# Eval("CatName") + "("+ Eval("Courses.Count")+")" %>' NavigateUrl='<%# "~/Category.aspx?id=" + Eval("CatID")%>'></asp:HyperLink>
+
         <br />
 <br />
     </ItemTemplate>
 </asp:DataList>
-<asp:EntityDataSource ID="EntityDataSource1" runat="server" Include="Courses" ConnectionString="name=QLKhoaHocEntities" DefaultContainerName="QLKhoaHocEntities" EnableFlattening="False" EntitySetName="Categories"  >
+<asp:EntityDataSource ID="EntityDataSource1" runat="server" Include="Courses" ConnectionString="name=QLKhoaHocEntities" DefaultContainerName="QLKhoaHocEntities" EnableFlattening="False" EntitySetName="Categories" Where=""  >
+
 </asp:EntityDataSource>
 
 

@@ -42,19 +42,14 @@
     <tr>
         <td></td>
         <td>
-            <asp:Button ID="ADD" runat="server" Text="ADD"  /></td>
+            <asp:Button ID="ADD" runat="server" Text="ADD" OnClick="ADD_Click" /></td>
     </tr>
 </table>
 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="EntityDataSource1">
     <Columns>
-        <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
         <asp:BoundField DataField="ID" HeaderText="ID" ReadOnly="True" SortExpression="ID" />
         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-<asp:TemplateField HeaderText="Image Product">
-    <ItemTemplate>
-        <asp:Image ID="Image1" runat="server" ImageUrl='<%#"~/images/Courses/"+ Eval("ImageFilePath") %>'/>
-    </ItemTemplate>
-</asp:TemplateField>        <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+        <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
         <asp:BoundField DataField="Duration" HeaderText="Duration" SortExpression="Duration" />
         <asp:BoundField DataField="CatID" HeaderText="CatID" SortExpression="CatID" />
         <asp:BoundField DataField="NumViews" HeaderText="NumViews" SortExpression="NumViews" />
